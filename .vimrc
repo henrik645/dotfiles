@@ -121,3 +121,6 @@ xnoremap <silent> <leader>f :!fmt<CR>
 
 nmap <leader><leader>t iHejsan<Esc><CR>
 set rtp+=/opt/homebrew/opt/fzf
+
+" buffer shortcut
+nnoremap <leader>b :ls<cr>:b<space>
