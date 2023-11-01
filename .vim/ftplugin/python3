@@ -1,0 +1,18 @@
+class Player:
+    def __init__(self):
+        self.hp = 20
+        self.energy = 100
+
+    def attack(self):
+        self.energy = self.energy - 5
+    
+    def hurt(self, damage):
+        self.hp = self.hp - damage
+
+    def show(self)
+
+p1 = Player()
+p1.attack()
+j1.hurt(7)
+p1.attack()
+p1.show()
