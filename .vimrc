@@ -124,3 +124,6 @@ set rtp+=/opt/homebrew/opt/fzf
 
 " buffer shortcut
 nnoremap <leader>b :ls<cr>:b<space>
+
+" open file explorer
+nnoremap <leader>e :Explore<cr>
