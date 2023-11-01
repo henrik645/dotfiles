@@ -13,6 +13,10 @@ Plugin 'preservim/nerdtree'
 " Plugin 'ycm-core/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-airline/vim-airline'
+Plugin 'yuttie/comfortable-motion.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'machakann/vim-highlightedyank'
 
 call vundle#end()
 
@@ -21,6 +25,10 @@ call vundle#end()
 " Plug 'prabirshrestha/vim-lsp'
 " Plug 'mattn/vim-lsp-settings'
 " call plug#end()
+
+let maplocalleader = "-"
+" let mapleader = "\"
+let mapleader = " "
 
 syntax enable
 set encoding=utf-8
@@ -41,7 +49,7 @@ set breakindent "indent correctly even when line broken in several lines
 "highlight search results incrementally
 set is hls
 "shortcut for removing highlight
-nmap <silent> <leader>r :nohlsearch<CR>
+nmap <silent><Leader>r :nohlsearch<CR>
 
 "scrolloff
 set scrolloff=4
@@ -53,17 +61,16 @@ set linebreak
 nnoremap j gj
 nnoremap k gk
 
-inoremap jj <Esc>
+" inoremap jj <Esc>
 
 nnoremap <Tab> <C-w>w
-
-let maplocalleader = "-"
-" let mapleader = "\"
-let mapleader = " "
 
 "open vimrc and reload it
 nnoremap <localleader>v :tabnew ~/.vimrc<CR>
 nnoremap <localleader>s :source ~/.vimrc<CR>
+
+"open goyo and limelight
+nnoremap <Leader>gy :Goyo<CR>
 
 " vimtex
 " set conceallevel=2
@@ -78,7 +85,7 @@ let g:limelight_conceal_guifg = 'gray'
 
 "limelight + goyo integration
 autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight
+autocmd! User GoyoLeave Limelight!
 
 "ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -101,16 +108,17 @@ hi clear Conceal "disable grey boxes on vimtex conceal
 set autoread
 
 " change splits easier
-" nmap <silent> <Space>l :wincmd l<CR>
-" nmap <silent> <Space>k :wincmd k<CR>
-" nmap <silent> <Space>j :wincmd j<CR>
-" nmap <silent> <Space>h :wincmd h<CR>
-" nmap <silent> <Space><Space> :wincmd w<CR>
+nmap <silent> <Space>l :wincmd l<CR>
+nmap <silent> <Space>k :wincmd k<CR>
+nmap <silent> <Space>j :wincmd j<CR>
+nmap <silent> <Space>h :wincmd h<CR>
+nmap <silent> <Space><Space> :wincmd w<CR>
 
 "easier easymotion
-map <Leader> <Plug>(easymotion-prefix)
+map <Leader><Leader> <Plug>(easymotion-prefix)
 
 "format files easier
 xnoremap <silent> <leader>f :!fmt<CR>
 
 nmap <leader><leader>t iHejsan<Esc><CR>
+set rtp+=/opt/homebrew/opt/fzf
