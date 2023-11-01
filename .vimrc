@@ -14,7 +14,6 @@ Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
-Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'machakann/vim-highlightedyank'
 
