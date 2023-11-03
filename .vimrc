@@ -127,3 +127,6 @@ nnoremap <leader>b :ls<cr>:b<space>
 
 " open file explorer
 nnoremap <leader>e :Explore<cr>
+
+" remove delay when exiting insert mode
+set esckeys!
