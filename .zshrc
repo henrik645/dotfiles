@@ -17,8 +17,8 @@ PERL_LOCAL_LIB_ROOT="/Users/henrikvester/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOC
 PERL_MB_OPT="--install_base \"/Users/henrikvester/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/henrikvester/perl5"; export PERL_MM_OPT;
 
-# export JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_HOME=/Users/henrikvester/Library/Java/JavaVirtualMachines/corretto-19.0.2/Contents/Home
+export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=/Users/henrikvester/Library/Java/JavaVirtualMachines/corretto-19.0.2/Contents/Home
 
 PATH="/Library/PostgreSQL/15/bin/:$PATH"
 

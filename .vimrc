@@ -107,11 +107,12 @@ hi clear Conceal "disable grey boxes on vimtex conceal
 set autoread
 
 " change splits easier
-nmap <silent> <Space>l :wincmd l<CR>
-nmap <silent> <Space>k :wincmd k<CR>
-nmap <silent> <Space>j :wincmd j<CR>
-nmap <silent> <Space>h :wincmd h<CR>
-nmap <silent> <Space><Space> :wincmd w<CR>
+" nmap <silent> <Space>l :wincmd l<CR>
+" nmap <silent> <Space>k :wincmd k<CR>
+" nmap <silent> <Space>j :wincmd j<CR>
+" nmap <silent> <Space>h :wincmd h<CR>
+" Interferes with EasyMotion
+" nmap <silent> <Space><Space> :wincmd w<CR>
 
 "easier easymotion
 map <Leader><Leader> <Plug>(easymotion-prefix)
@@ -119,7 +120,7 @@ map <Leader><Leader> <Plug>(easymotion-prefix)
 "format files easier
 xnoremap <silent> <leader>f :!fmt<CR>
 
-nmap <leader><leader>t iHejsan<Esc><CR>
+" nmap <leader><leader>t iHejsan<Esc><CR>
 set rtp+=/opt/homebrew/opt/fzf
 
 " buffer shortcut
@@ -127,6 +128,15 @@ nnoremap <leader>b :ls<cr>:b<space>
 
 " open file explorer
 nnoremap <leader>e :Explore<cr>
+
+" paste and yank from system clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+nnoremap <leader>y "+y
+
+" show terminal
+nnoremap <leader>t :term<cr>
+nnoremap <leader>T :vert term<cr>
 
 " remove delay when exiting insert mode
 set esckeys!
