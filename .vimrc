@@ -1,45 +1,28 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vim-plug needs to be installed!
+"
+" Plug plugins
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
+call plug#end()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'lervag/vimtex'
-Plugin 'sirver/ultisnips'
-Plugin 'junegunn/limelight.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'preservim/nerdtree'
-" Plugin 'ycm-core/YouCompleteMe'
-Plugin 'tpope/vim-surround'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-commentary'
-Plugin 'machakann/vim-highlightedyank'
-
-call vundle#end()
-
-" " Plug plugins
-" call plug#begin()
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
-" call plug#end()
-
-let maplocalleader = "-"
-" let mapleader = "\"
 let mapleader = " "
 
 syntax enable
 set encoding=utf-8
 set fileencoding=utf-8
 
+"line numbers
 set nu
 
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smarttab
 filetype plugin indent on
+set tabstop=4 "one tab is shown with four spaces
+set shiftwidth=4 "'>' is four spaces
+set expandtab "<tab> key inserts four spaces
 
 set autoindent
 set smartindent
@@ -50,7 +33,7 @@ set is hls
 "shortcut for removing highlight
 nmap <silent><Leader>r :nohlsearch<CR>
 
-"scrolloff
+"cursor can never go fully up or down (context)
 set scrolloff=4
 
 "line break only on whitespace (not in middle of word)
@@ -60,79 +43,27 @@ set linebreak
 nnoremap j gj
 nnoremap k gk
 
-" inoremap jj <Esc>
-
 nnoremap <Tab> <C-w>w
 
 "open vimrc and reload it
 nnoremap <localleader>v :tabnew ~/.vimrc<CR>
 nnoremap <localleader>s :source ~/.vimrc<CR>
 
-"open goyo and limelight
-nnoremap <Leader>gy :Goyo<CR>
-
-" vimtex
-" set conceallevel=2
-nnoremap <localleader>t :VimtexTocOpen<CR>
-let g:vimtex_view_method = 'skim'
-let g:vimtex_view_skim_sync = 1
-let g:vimtex_view_skim_activate = 1
-
-"limelight
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_guifg = 'gray'
-
-"limelight + goyo integration
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-"ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 "NERDTree
 nnoremap <C-n> :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 
-"YouCompleteMe + VimTex
-" if !exists('g:ycm_semantic_triggers')
-"   let g:ycm_semantic_triggers = {}
-" endif
-" au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-
-hi clear Conceal "disable grey boxes on vimtex conceal
-
 " reload changed files (if they haven't been edited inside of Vim)
 set autoread
 
-" change splits easier
-" nmap <silent> <Space>l :wincmd l<CR>
-" nmap <silent> <Space>k :wincmd k<CR>
-" nmap <silent> <Space>j :wincmd j<CR>
-" nmap <silent> <Space>h :wincmd h<CR>
-" Interferes with EasyMotion
-" nmap <silent> <Space><Space> :wincmd w<CR>
-
-"easier easymotion
+"easymotion prefix
 map <Leader><Leader> <Plug>(easymotion-prefix)
 
-"format files easier
-xnoremap <silent> <leader>f :!fmt<CR>
-
-" nmap <leader><leader>t iHejsan<Esc><CR>
-set rtp+=/opt/homebrew/opt/fzf
-
-" buffer shortcut
+" list buffers shortcut
 nnoremap <leader>b :ls<cr>:b<space>
 
 " open file explorer
 nnoremap <leader>e :Explore<cr>
-
-" paste and yank from system clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-nnoremap <leader>y "+y
 
 " show terminal
 nnoremap <leader>t :term<cr>
